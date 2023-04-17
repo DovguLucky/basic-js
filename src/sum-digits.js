@@ -14,30 +14,27 @@ const {
  * For 91, the result should be 1 (9 + 1 = 10, 1 + 0 = 1)
  *
  */
-function getSumOfDigits( /* n */ ) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function getSumOfDigits(n) {
+  let sum = 0;
+  let res;
+
+  function red(numb) {
+    sum = 0;
+    let arr = [];
+    let str = String(numb)
+    arr = str.split('');
+    arr.forEach(el => {
+      sum += Number(el);
+    })
+    if (String(sum).split('').length > 1) {
+      red(sum)
+    }
+  }
+  red(n)
+  return sum
 }
 
 module.exports = {
 
-  getSumOfDigits(n) {
-    let sum = 0;
-    let res;
-
-    function red(numb) {
-      sum = 0;
-      let arr = [];
-      let str = String(numb)
-      arr = str.split('');
-      arr.forEach(el => {
-        sum += Number(el);
-      })
-      if (String(sum).split('').length > 1) {
-        red(sum)
-      }
-    }
-    red(n)
-    return sum
-  }
+  getSumOfDigits
 };

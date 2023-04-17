@@ -1,5 +1,5 @@
 const {
-  NotImplementedError
+    NotImplementedError
 } = require('../extensions/index.js');
 
 /**
@@ -12,14 +12,7 @@ const {
  * For aabbbc should return 2a3bc
  *
  */
-function encodeLine( /* str */ ) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
-}
-
-module.exports = {
-
-  encodeLine(str) {
+function encodeLine(str) {
     let newArr = str.split('')
     let count = 1;
     let res = []
@@ -46,4 +39,7 @@ module.exports = {
     }
     return res.join("")
 }
+
+module.exports = {
+    encodeLine
 };

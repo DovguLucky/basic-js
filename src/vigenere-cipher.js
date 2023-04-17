@@ -25,12 +25,8 @@ class VigenereCipheringMachine {
 
   }
   encrypt(str, key) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
   }
   decrypt(encStr, key) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
   }
 }
 
