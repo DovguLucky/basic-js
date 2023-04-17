@@ -19,5 +19,15 @@ function isMAC48Address(/* n */) {
   // remove line with error and write your code here
 }
 module.exports = {
-  isMAC48Address
+  isMAC48Address(str) {
+    let arr = [];
+    arr = str.split('-')
+    let res = true ;
+    arr.forEach(el => {
+        if(isNaN( parseInt(el, 16))){
+            res = false
+        }
+    })
+    return res
+    }
 };

@@ -23,5 +23,19 @@ function dateSample(/* sampleActivity */) {
 }
 
 module.exports = {
-  dateSample
+   dateSample
+//    (c14) {
+//     let res = 0;
+
+//     if (typeof c14 === 'string') {
+//     let sampleActivity = Number(c14)
+//     console.log(sampleActivity)
+//     let HALF_LIFE_PERIOD = 5.73 * (10 ** 3);
+//     let MODERN_ACTIVITY = 0.693;
+//         res = Math.floor((0.3142 * (15.63 / sampleActivity)) / (MODERN_ACTIVITY / HALF_LIFE_PERIOD))
+//     }else{
+//       res=false;
+//     }
+//     return res
+// }
 };

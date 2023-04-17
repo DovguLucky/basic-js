@@ -21,5 +21,23 @@ function renameFiles(/* names */) {
 }
 
 module.exports = {
-  renameFiles
+  renameFiles(arr) {
+    let newArr = arr;
+    let count = 1;
+    function repeat(res) {
+        for (let j = 1; j < arr.length; j++) {
+            if (res.includes(res[j - 1], j)) {
+                if (res.indexOf(res[j - 1], j)) {
+                    let ind = res.indexOf(res[j - 1], j);
+                    res[ind] = `${res[ind]}(${count})`
+                    count++;
+                    repeat(res)
+                }
+            }
+            count = 1;
+        }
+    }
+    repeat(newArr)
+    return newArr
+}
 };

@@ -16,5 +16,9 @@ function getEmailDomain(/* email */) {
 }
 
 module.exports = {
-  getEmailDomain
+  getEmailDomain(email){
+    let arr = email.split(/@\W*/gi);
+    return `${arr[arr.length -1]}`
+
+  }
 };

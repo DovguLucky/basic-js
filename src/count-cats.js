@@ -20,5 +20,18 @@ function countCats(/* matrix */) {
 }
 
 module.exports = {
-  countCats
+countCats(arr){
+    let res = 0;
+    function reduce (arr){
+        arr.forEach(el => {
+            if (el === "^^") {
+                res++
+            } else if (Array.isArray(el)) {
+                reduce(el)
+            }
+        })
+    }
+    reduce(arr)
+    return res;
+}
 };

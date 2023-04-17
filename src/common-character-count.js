@@ -17,5 +17,17 @@ function getCommonCharacterCount(/* s1, s2 */) {
 }
 
 module.exports = {
-  getCommonCharacterCount
+  getCommonCharacterCount(str1, str2) {
+    let res = 0;
+    let arr1 = str1.split("");
+    let arr2 = str2.split("");
+
+    arr1.forEach(el => {
+        if (arr2.find(e => e === el)) {
+            arr2.splice(arr2.indexOf(el), 1);
+            res++
+        }
+    })
+return res;
+}
 };

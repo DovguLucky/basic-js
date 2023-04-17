@@ -28,5 +28,23 @@ function getDNSStats(/* domains */) {
 }
 
 module.exports = {
-  getDNSStats
+  getDNSStats(arr) {
+    let resObj = {};
+    let newArr = []
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(arr[i].split(".").reverse())
+        for (let j = 1; j <= newArr[i].length; j++) {
+            let name = newArr[i].slice(0, j).join('.');
+            let count = 1;
+            if (!resObj[`.${name}`]) {
+                resObj[`.${name}`] = count;
+            } else if (resObj[`.${name}`]) {
+                count = resObj[`.${name}`] + 1;
+                resObj[`.${name}`] = count++;
+                count = 1;
+            }
+        }
+    }
+    return resObj
+}
 };
